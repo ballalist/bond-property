@@ -1,0 +1,15 @@
+{
+  "name": "bond-property-express",
+  "version": "0.0.1",
+  "description": "API Server for Bond Properties Listing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Waranon Tiamsang @ballalist",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.1"
+  }
+}

@@ -1,0 +1,20 @@
+# docker-compose.override.yml
+
+version: '3.3'
+
+services:
+    node2: # name of new container
+        build:
+            context: ./node
+            args:
+                - NODE_VERSION=latest
+                - PROJECT_PATH=/opt/app/second-app/
+                - NODE_ENV=production
+                - YARN=false
+        volumes:
+            - ./html/template/server/:/opt/app/second-app
+        entrypoint: run-nodock "nodemon index.js" # the entrypoint for the "node2" container
+
+    nginx:
+        links:
+            - node2 # link "nginx" to "node2"
